@@ -4,9 +4,9 @@
 @section('content')
     <div class="container">
         
-        <h2>What is laracast</h2>
+        <h2>What is {{config('app.name')}}</h2>
 
-        <p>Laracast is a clone app of<a href="http://laramap.com">Laramap.com</a></p>
+        <p>{{config('app.name')}} is a clone app of<a href="http://laramap.com">Laramap.com</a></p>
 
         <div class="row">
             <div class="col-md-6">
