@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('layouts/app',['title'=>'about'])
 
 
 @section('content')
@@ -17,7 +17,7 @@
             </div>
         </div>
         
-        <p> Feel free to help to improve the <a href="http://github.com/mercuryseries">source code.</a></p>
+        <p> Feel free to help to improve the <a href="https://github.com/sthanial2002/Laracarte-demo">source code.</a></p>
 
         <hr>
 
