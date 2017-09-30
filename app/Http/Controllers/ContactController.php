@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactFormRequest ;
+use App\Mail\ContactMessageCreated;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Message;
 
-class MessageController extends Controller
+
+
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +29,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-      return view('pages/contact') ;
+      return view('contact/create') ;
     }
 
     /**
@@ -32,9 +38,17 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactFormRequest $request )
     {
-        //
+        $msg = Message::create($request->only('name','email','message')) ;
+
+        $mailable = new ContactMessageCreated($msg);
+
+        Mail::to(config('laracarte.admin_support_email'))->send($mailable);
+
+        flashy('Nous vous répondrons dans un bref délai') ;
+
+        return redirect()->route('root_path');
     }
 
     /**

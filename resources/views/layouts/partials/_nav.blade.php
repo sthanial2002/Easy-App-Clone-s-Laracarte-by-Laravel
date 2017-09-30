@@ -10,14 +10,14 @@
           <li class="nav-item {{set_active_route('root_path')}}">
             <a class="nav-link" href="{{route('root_path')}}">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item {{set_active_route('root_about')}}">
-            <a class="nav-link" href="{{route('root_about')}}">About</a>
+          <li class="nav-item {{set_active_route('about_path')}}">
+            <a class="nav-link" href="{{route('about_path')}}">About</a>
           </li>
-          <li class="nav-item {{set_active_route('root_artisans')}}">
-            <a class="nav-link" href="{{route('root_artisans')}}">Artisans</a>
+          <li class="nav-item {{set_active_route('artisans_path')}}">
+            <a class="nav-link" href="{{route('artisans_path')}}">Artisans</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planet</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planet</a><!--
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="#">Laravel.com</a>
               <a class="dropdown-item" href="#">Laravel.io</a>
@@ -25,10 +25,10 @@
               <a class="dropdown-item" href="#">Larajobs</a>
               <a class="dropdown-item" href="#">Laranews</a>
               <a class="dropdown-item" href="#">Larachat</a>
-            </div>
+            </div>-->
           </li>
-          <li class="nav-item {{set_active_route('root_contact')}}">
-            <a class="nav-link" href="{{route('root_contact')}}">Contact</a>
+          <li class="nav-item {{set_active_route('contact.create')}}">
+            <a class="nav-link" href="{{route('contact.create')}}">Contact</a>
           </li>
         </ul>
         <ul class="nav nabar-nav navbar-right">

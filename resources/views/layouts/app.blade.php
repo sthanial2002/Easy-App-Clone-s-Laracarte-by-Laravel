@@ -26,9 +26,17 @@
         @include('layouts/partials/_footer')
 
 
+
+
         <!-- jQuery -->
         <script src="//code.jquery.com/jquery.min.js"></script>
+        
+        @include('flashy::message')
+
+
         <!-- Bootstrap JavaScript -->
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+       
     </body>
 </html>
