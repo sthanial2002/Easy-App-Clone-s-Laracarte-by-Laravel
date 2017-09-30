@@ -44,7 +44,7 @@ class ContactController extends Controller
 
         $mailable = new ContactMessageCreated($msg);
 
-        Mail::to(config('laracarte.admin_support_email'))->send($mailable);
+        Mail::to(config('laracarte.admin_support_email'))->queue($mailable);
 
         flashy('Nous vous répondrons dans un bref délai') ;
 
