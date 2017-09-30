@@ -7,7 +7,7 @@ if(! function_exists('page_title') )
     {
       $base_title = config('app.name').'- List of Artisans';
 
-      return $title. ' | '. $base_title ;
+      return $title.''.$base_title ;
     }
 
     if(! function_exists('set_active_route'))

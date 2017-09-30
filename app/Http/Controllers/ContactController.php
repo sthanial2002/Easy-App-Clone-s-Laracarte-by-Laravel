@@ -10,7 +10,7 @@ use App\Models\Message;
 
 
 
-class ContactController extends Controller
+class ContactController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -44,7 +44,7 @@ class ContactController extends Controller
 
         $mailable = new ContactMessageCreated($msg);
 
-        Mail::to(config('laracarte.admin_support_email'))->queue($mailable);
+        Mail::to(config('laracarte.admin_support_email'))->send($mailable);
 
         flashy('Nous vous répondrons dans un bref délai') ;
 
