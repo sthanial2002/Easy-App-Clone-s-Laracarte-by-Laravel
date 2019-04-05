@@ -21,4 +21,26 @@ class HelpersTest extends TestCase
         $this->assertEquals('Artisans |'.config('app.name').'- List of Artisans',page_title('Artisans |'));
         $this->assertEquals('Contact |'.config('app.name').'- List of Artisans',page_title('Contact |'));
     }
+
+
+    /** @test */
+    public function set_active_route_should_return_active_route_if_the_route_is_listen()
+    {
+        $this->get(route('root_path'));
+        $this->assertEquals('active',set_active_route('root_path'));
+        $this->assertEquals('',set_active_route('about_path'));
+
+        $this->get(route('about_path'));
+        $this->assertEquals('active',set_active_route('about_path'));
+        $this->assertEquals('',set_active_route('artisans_path'));
+
+        $this->get(route('artisans_path'));
+        $this->assertEquals('active',set_active_route('artisans_path'));
+        $this->assertEquals('',set_active_route('contact.create'));
+
+        $this->get(route('contact.create'));
+        $this->assertEquals('active',set_active_route('contact.create'));
+        $this->assertEquals('',set_active_route('root_path'));
+        
+    }
 }

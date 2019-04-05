@@ -9,7 +9,7 @@
                 <a href="mailto:{{config('laracarte.admin_support_email')}}">ask for help.</a>
             </p>
 
-            <form action="{{route('contact.store')}}" method="POST">
+            <form action="{{route('contact.store')}}" method="POST" >
                 
                 {{csrf_field()}}
 

@@ -13,7 +13,6 @@ uontains the "web" middleware group. Now create something great!
 |
 
 */
-use App\Mail\ContactMessageCreated ;
 
 
 Route::get('/',[
@@ -31,10 +30,12 @@ Route::get('/artisans',[
     'uses'=>'PagesController@artisans'
 ]);
 
+Auth::routes();
+
 Route::get('/contact',[
     'as'=> 'contact.create',
     'uses'=>'ContactController@create'
-]);
+])->middleware('auth');
 
 Route::post('/contact',[
     'as'=> 'contact.store',

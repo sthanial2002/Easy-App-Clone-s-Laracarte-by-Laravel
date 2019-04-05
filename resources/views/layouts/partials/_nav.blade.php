@@ -19,25 +19,38 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planet</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Laravel.com</a>
-              <a class="dropdown-item" href="#">Laravel.io</a>
-              <a class="dropdown-item" href="#">Laracast</a>
-              <a class="dropdown-item" href="#">Larajobs</a>
-              <a class="dropdown-item" href="#">Laranews</a>
-              <a class="dropdown-item" href="#">Larachat</a>
+              <a class="dropdown-item" href="http://laravel.com">Laravel.com</a>
+              <a class="dropdown-item" href="http://laravel.io">Laravel.io</a>
+              <a class="dropdown-item" href="http://laracasts.com">Laracast</a>
+              <a class="dropdown-item" href="http://larajobs.com">Larajobs</a>
+              <a class="dropdown-item" href="http://laravel-news.com">Laranews</a>
+              <a class="dropdown-item" href="http://larachat.co">Larachat</a>
             </div>
           </li>
           <li class="nav-item {{set_active_route('contact.create')}}">
             <a class="nav-link" href="{{route('contact.create')}}">Contact</a>
           </li>
         </ul>
+        @if(Auth::check())
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-rounded" src="{{ Auth::user()->present()->profileImage(20)  }}" width="20" /> {{ Auth::user()->name }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ route('account_path') }}">My profile</a></li>
+              <li><a href="{{ route('edit_account_path') }}">Edit profile</a></li>
+              <li><a href="{{ route('new_password_path') }}">Change my password</a></li>
+              <li class="divider"></li>
+              <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+            </ul>
+          </li>
+        @else
         <ul class="nav nabar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link btn btn-primary" href="#">Login</a>
+            <a class="nav-link btn btn-primary" href="{{ route('login') }}">Login</a>
           </li> |
           <li class="nav-item">
-            <a class="nav-link btn btn-info" href="#">Register</a>
+            <a class="nav-link btn btn-info" href="{{route('register')}}">Register</a>
           </li>
+          @endif
         </ul>
           
       </div>

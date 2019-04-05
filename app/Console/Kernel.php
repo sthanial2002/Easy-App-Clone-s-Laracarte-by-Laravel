@@ -22,12 +22,13 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+/*
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('laracarte:clean-database')
+                  ->monthly();
     }
-
+*/
     /**
      * Register the commands for the application.
      *

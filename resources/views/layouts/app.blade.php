@@ -33,7 +33,8 @@
         
         @include('flashy::message')
 
-
+        <script src="{{ elixir('js/all.js') }}"></script>
+	    @yield('scripts.footer')
         <!-- Bootstrap JavaScript -->
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 
