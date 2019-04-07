@@ -42,5 +42,9 @@ Route::post('/contact',[
     'uses'=>'ContactController@store'
 ]);
 
+Route::get('/test','FirebaseController@index');
+
+
+
 
 
